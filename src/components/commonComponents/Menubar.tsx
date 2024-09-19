@@ -21,7 +21,7 @@ const Menubar: React.FC<Props> = ({ categories }) => {
     return (
         <nav className="flex items-center px-10 py-3 justify-between fixed z-10 top-0 backdrop-blur-md w-full bg-[#000000b5]">
             <NavLink to="/" className="w-52 h-auto">
-                <img src="public/logo.svg" alt="predatorCut" width={'80%'} height={'80%'} />
+                <img src="/public/logo.svg" alt="predatorCut" width={'80%'} height={'80%'} />
             </NavLink>
             <div className="w-full flex justify-center gap-24">
                 {visibleCategories.map((category, index) => (
