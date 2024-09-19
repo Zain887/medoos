@@ -4,22 +4,19 @@ import { BiLogoTiktok } from "react-icons/bi";
 import { FaFacebook } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
+import { Category } from '../../type'; // Import the Category interface
 
 interface Props {
-    // Define your component props here
+    categories: Category[]; // Pass the categories as props
 }
 
-const Menubar: React.FC<Props> = () => {
-    // Define your menu items
-    const menuItems = [
-        { label: 'Product1', link: '/' },
-        { label: 'Product1', link: '/exclusive' },
-        { label: 'Product1', link: '/store' },
-        { label: 'Product1', link: '/business' },
-        { label: 'Product1', link: '/black-weeks' },
-    ];
-
+const Menubar: React.FC<Props> = ({ categories }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control the dropdown
+
+    // Split categories: First 6 for direct menu items, rest for the dropdown
+    const visibleCategories = categories.slice(0, 4);
+    const dropdownCategories = categories.slice(4);
 
     return (
         <nav className="flex items-center px-10 py-3 justify-between fixed z-10 top-0 backdrop-blur-md w-full bg-[#000000b5]">
@@ -27,19 +24,53 @@ const Menubar: React.FC<Props> = () => {
                 <img src="public/logo.svg" alt="predatorCut" width={'80%'} height={'80%'} />
             </NavLink>
             <div className="w-full flex justify-center gap-24">
-                {menuItems.map((item, index) => (
+                {visibleCategories.map((category, index) => (
                     <NavLink
                         key={index}
-                        to={item.link}
+                        to={`/${category.name}`} // Link to category page
                         className={`text-[#666666] font-Roboto text-md cursor-pointer ${index === activeIndex
                             ? 'px-2 py-1 font-bold rounded-md bg-white'
-                            : 'border-b-2 px-2 py-1 border-transparent hover:border-white hover:font-bold  transition-border duration-300'
+                            : 'border-b-2 px-2 py-1 border-transparent hover:border-white hover:font-bold transition-border duration-300'
                             }`}
-                        onClick={() => setActiveIndex(index)}
+                        onClick={() => {
+                            setActiveIndex(index);
+                            setIsDropdownOpen(false); // Close dropdown on select
+
+                        }}
                     >
-                        {item.label}
+                        {category.name}
                     </NavLink>
                 ))}
+
+                {/* Dropdown for categories more than 6 */}
+                {dropdownCategories.length > 0 && (
+                    <div className="relative">
+                        <button
+                            className="text-[#666666] font-Roboto text-md cursor-pointer border-b-2 px-2 py-1 border-transparent hover:bg-white hover:font-bold transition-border duration-300"
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        >
+                            More Categories
+                        </button>
+
+                        {isDropdownOpen && (
+                            <div className="absolute top-full left-0 bg-white rounded-md shadow-lg py-2 z-20 w-48">
+                                {dropdownCategories.map((category, index) => (
+                                    <NavLink
+                                        key={index + 4} // Ensure unique keys
+                                        to={`/${category.name}`} // Link to category page
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200"
+                                        onClick={() => {
+                                            setActiveIndex(index + 4);
+                                            setIsDropdownOpen(false); // Close dropdown on select
+                                        }}
+                                    >
+                                        {category.name}
+                                    </NavLink>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
             <div className='flex items-center justify-evenly'>
                 <a href="/">

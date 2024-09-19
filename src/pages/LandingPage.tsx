@@ -8,23 +8,23 @@ interface Props {
 
 const LandingPage: React.FC<Props> = () => {
   const images = [
-    { url: '/assets/slider/Angelo.webp', article: 'ANGELO' },
-    { url: '/assets/slider/Zollato.webp', article: 'ZOLLATO' },
-    { url: '/assets/slider/Medusa.webp', article: 'MEDUSA' },
+    { url: '/public/ImgPlaceholder.webp', article: 'ANGELO' },
+    { url: '/public/ImgPlaceholder.webp', article: 'ZOLLATO' },
+    { url: '/public/ImgPlaceholder.webp', article: 'MEDUSA' },
   ];
 
   const additionalImages = [
-    '/assets/flipCard/2.jpg',
-    '/assets/flipCard/6.jpg',
-    '/assets/flipCard/8.jpg',
-    '/assets/flipCard/4.jpg',
+    '/public/ImgPlaceholder.webp',
+    '/public/ImgPlaceholder.webp',
+    '/public/ImgPlaceholder.webp',
+    '/public/ImgPlaceholder.webp',
   ];
 
   return (
     <>
       <Slider images={images} />
-      <p className='text-center text-[#F9DF7B] font-Roboto font-extrabold text-5xl my-3'>
-        ITS SLEEK | ITS SEXY | ITS SHEESH
+      <p className='text-center text-[#918787] font-Roboto font-extrabold text-5xl my-3'>
+        It's BOLD | It's SLEEK | It's UNSTOPPABLE
       </p>
       <div className='my-5 flex items-center justify-evenly'>
         {additionalImages.map((image, index) => (

@@ -7,7 +7,7 @@ interface Props {
 const Business: React.FC<Props> = () => {
     return (
         <div className='mt-20'>
-            <p className='text-5xl text-center text-red-600 font-Roboto font-bold'>BUSINESS</p>
+            <p className='text-5xl text-center text-red-600 font-Roboto font-bold'>Axe</p>
         </div>
     );
 };
