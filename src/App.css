@@ -1,0 +1,72 @@
+.sowrdDrop {
+  transform: rotateX(-90deg);
+  animation: drop 1s 0s forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: rotateX(-90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.slideup {
+  transform: rotatex(90deg);
+  transform-origin: center;
+  animation: slidup 1s 0s forwards;
+}
+
+@keyframes slidup {
+  0% {
+    transform: rotatex(90deg)
+  }
+
+  100% {
+    transform: rotatex(0deg)
+  }
+}
+
+.light {
+  position: relative;
+}
+
+.light::after {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 100%;
+  content: "";
+}
+
+.lineleft {
+  transform: translateX(-100vw);
+  animation: leftlinemove 1s 0s forwards;
+}
+
+@keyframes leftlinemove {
+  0% {
+    transform: translateX(-100vw);
+  }
+
+  100% {
+    transform: translate(0vw);
+  }
+}
+
+.lineright {
+  transform: translateX(100vw);
+  animation: rightlinemove 1s 0s forwards;
+}
+
+@keyframes rightlinemove {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translate(0vw);
+  }
+}
