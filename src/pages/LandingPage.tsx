@@ -16,24 +16,24 @@ const LandingPage: React.FC<Props> = () => {
     { url: '/headerImages/beautiInstrument.webp', article: 'Beauty Instrument' },
   ];
 
-  const additionalImages = [
-    '/ImgPlaceholder.webp',
-    '/ImgPlaceholder.webp',
-    '/ImgPlaceholder.webp',
-    '/ImgPlaceholder.webp',
+  const flipImage = [
+    '/flipImage/sword.webp',
+    '/flipImage/axe.jpg',
+    '/flipImage/kknife.jpg',
+    '/flipImage/hknife.jpg',
   ];
 
   return (
     <>
       <Slider images={images} />
-      <p className='text-center text-[#918787] font-Roboto font-extrabold text-5xl my-3'>
+      <p className='text-center text-[#918787] font-Roboto font-extrabold text-5xl my-20'>
         It's BOLD | It's SLEEK | It's UNSTOPPABLE
       </p>
       <div className='my-5 flex items-center justify-evenly'>
-        {additionalImages.map((image, index) => (
+        {flipImage.map((image, index) => (
           <div
             key={index}
-            className='w-[20%] h-auto bg-gray-500 border-2 border-[#b98416] rounded-md overflow-hidden relative transform hover:rotate-180 hover:scale-y-[-1] transition-transform duration-1000 cursor-pointer'
+            className='w-[20%] h-auto bg-gray-500 border-2 border-white rounded-md overflow-hidden relative transform hover:rotate-180 hover:scale-y-[-1] transition-transform duration-1000 cursor-pointer'
           >
             <img src={image} alt='' width={'100%'} height={'100%'} />
           </div>

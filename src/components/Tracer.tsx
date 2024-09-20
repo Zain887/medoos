@@ -28,9 +28,9 @@ const Tracer: React.FC<Props> = () => {
             {positions.map((position, index) => (
                 <img
                     key={index}
-                    src={`/assets/tracer/framtrasn${index + 1}.png`}
-                    alt="sheesh"
-                    className="w-72 h-auto cursor-pointer duration-700 relative"
+                    src={`/tracerImage/frame${index + 1}.png`}
+                    alt="predator Cut"
+                    className="w-auto h-80 cursor-pointer duration-700 relative"
                     style={{
                         transform: `translate(${position.x * 20}px, ${position.y * 20}px)`,
                     }}

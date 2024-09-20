@@ -41,7 +41,7 @@ const Slider: React.FC<Props> = (props) => {
                         }}
                     >
                         <h1
-                            className='backdrop-blur-sm rounded-t-xl rounded-l-xl px-4 text-8xl font-Roboto font-extrabold bg-gradient-to-b from-[#666666] to-white text-transparent bg-clip-text'
+                            className='backdrop-blur-3xl rounded-t-xl rounded-l-xl px-4 text-8xl font-Roboto font-extrabold bg-gradient-to-b from-[#666666] to-white text-transparent bg-clip-text'
                         >
                             {collection.article}
                         </h1>
