@@ -23,16 +23,16 @@ const Slider: React.FC<Props> = (props) => {
     };
 
     return (
-        <div className='relative'>
+        <div className='relative overflow-hidden'>
             {images.map((collection, index) => (
-                <div className='relative' key={index}>
+                <div className='relative object-cover' key={index}>
                     <img
                         src={collection.url}
                         alt=''
                         style={{
                             display: index === currentImageIndex ? 'block' : 'none',
                         }}
-                        className='w-full min-w-[1364px] h-auto shadow-lg shadow-[#B98416] rounded-md'
+                        className='w-full min-w-[1364px] max-h-[680px] object-cover object-center shadow-lg shadow-[#666666] rounded-md'
                     />
                     <div
                         className='absolute bottom-0 right-0'
@@ -41,7 +41,7 @@ const Slider: React.FC<Props> = (props) => {
                         }}
                     >
                         <h1
-                            className='backdrop-blur-sm rounded-t-xl rounded-l-xl px-4 text-9xl font-Roboto font-extrabold bg-gradient-to-r from-[#F9DF7B] to-[#B98416] text-transparent bg-clip-text'
+                            className='backdrop-blur-sm rounded-t-xl rounded-l-xl px-4 text-8xl font-Roboto font-extrabold bg-gradient-to-b from-[#666666] to-white text-transparent bg-clip-text'
                         >
                             {collection.article}
                         </h1>
@@ -52,7 +52,7 @@ const Slider: React.FC<Props> = (props) => {
                 {images.map((_, index) => (
                     <button
                         key={index}
-                        className={`w-4 h-4 mx-1 rounded-full ${index === currentImageIndex ? 'bg-[#B98416]' : 'bg-[#F9DF7B]'
+                        className={`w-3 h-3 mx-1 p-0 rounded-lg ${index === currentImageIndex ? 'bg-white' : 'bg-[#666666]'
                             }`}
                         onClick={() => handleDotClick(index)}
                     ></button>

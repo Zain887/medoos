@@ -8,9 +8,12 @@ interface Props {
 
 const LandingPage: React.FC<Props> = () => {
   const images = [
-    { url: '/ImgPlaceholder.webp', article: 'ANGELO' },
-    { url: '/ImgPlaceholder.webp', article: 'ZOLLATO' },
-    { url: '/ImgPlaceholder.webp', article: 'MEDUSA' },
+    { url: '/headerImages/swordO.webp', article: 'Swords' },
+    { url: '/headerImages/axe.jpg', article: 'Axe' },
+    { url: '/headerImages/Hknife.jpg', article: 'Hunting knives' },
+    { url: '/headerImages/Kknives.jpg', article: 'Kitchen knives' },
+    { url: '/headerImages/dental.jpg', article: 'Dental Instrument' },
+    { url: '/headerImages/beautiInstrument.webp', article: 'Beauty Instrument' },
   ];
 
   const additionalImages = [
