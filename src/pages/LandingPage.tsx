@@ -39,37 +39,35 @@ const LandingPage: React.FC<Props> = () => {
           </div>
         ))}
       </div>
-      <div className='text-center mt-16 text-white'>
+      <div className='text-center my-20 text-white'>
         <p className='text-lg font-Roboto'>Our Products at a Glance</p>
         <p className='text-3xl font-bold mt-5'>Currently most popular <br />
           The Steamulation Highlights</p>
       </div>
       <Tracer />
       <div className='flex p-5'>
-        <div className='w-[33.33%] h-full overflow-hidden border-2 border-[#F9DF7B]'>
-          <img src="/assets/frame7.jpg" alt="sheesh" width={'100%'} height={'100%'} />
+        <div className='w-[33.33%] h-full overflow-hidden border-2 border-white'>
+          <img src="/sword.webp" alt="sheesh" width={'100%'} height={'100%'} />
         </div>
-        <div className='w-[33.33%] border-y-2 border-[#F9DF7B]'>
-          <div className='w-full h-full bg-[#F9DF7B] flex items-center justify-center'>
+        <div className='w-[33.33%] border-y-2 border-white'>
+          <div className='w-full h-full bg-white flex items-center justify-center'>
             <div className='text-center p-5'>
-              <p className='font-Roboto text-2xl font-bold'>
-                Your Luxurious
-                Smoking Partner
+              <p className='font-Roboto text-2xl font-bold text-[#666666]'>
+                Elevating Craftsmanship to an Art Form
               </p>
-              <p className='font-Roboto text-xl font-light my-8'>
-                Sheesh is an Emirati brand, transforming the ancient tradition into a luxurious experience, by creating ravishing & exquisite designs with world's finest materials.
+              <p className='font-Roboto text-xl font-light my-8 text-[#666666]'>
+                Our brand elevates traditional tools into premium, high-performance instruments, blending form and function with unrivaled craftsmanship. We take pride in creating exceptional designs using the finest materials, whether it's our swords, knives, or precision instruments.</p>
+              <p className='mb-10 font-Roboto text-2xl font-bold text-[#666666]'>
+                Hand Crafted in PAKISTAN.
               </p>
-              <p className='mb-10 font-Roboto text-2xl font-bold'>
-                Hand Crafted in UAE.
-              </p>
-              <a href="/" className='text-lg font-light text-black border p-2 border-black hover:bg-black hover:text-[#f9df7b] duration-150'>
+              <a href="/" className='text-lg font-bold bg-[#666666] text-white border p-2 border-[#666666] hover:bg-white hover:text-[#666666] duration-150'>
                 Descover More
               </a>
             </div>
           </div>
         </div>
-        <div className='w-[33.33%] h-full overflow-hidden border-2 border-[#F9DF7B]'>
-          <img src="/assets/frame6.jpg" alt="sheesh" width={'100%'} height={'100%'} />
+        <div className='w-[33.33%] h-full overflow-hidden border-2 border-white'>
+          <img src="/axe.webp" alt="sheesh" width={'100%'} height={'100%'} />
         </div>
       </div>
     </>
