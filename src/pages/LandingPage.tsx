@@ -39,8 +39,8 @@ const LandingPage: React.FC<Props> = () => {
           </div>
         ))}
       </div>
-      <div className='text-center mt-16 text-[#F9DF7B]'>
-        <p className='text-lg font-Roboto'>STEAMULATION PRODUCTS AT A GLANCE</p>
+      <div className='text-center mt-16 text-white'>
+        <p className='text-lg font-Roboto'>Our Products at a Glance</p>
         <p className='text-3xl font-bold mt-5'>Currently most popular <br />
           The Steamulation Highlights</p>
       </div>

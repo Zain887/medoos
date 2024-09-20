@@ -41,7 +41,7 @@ function App() {
             <Route path='/dental instruments' element={<DentalInstruments />} />
             <Route path='/axe' element={<Axe />} />
           </Routes>
-          <Footer />
+          <Footer categories={categories}/>
         </div>
       )}
     </Router>
