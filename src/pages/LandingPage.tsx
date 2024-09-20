@@ -39,7 +39,7 @@ const LandingPage: React.FC<Props> = () => {
           </div>
         ))}
       </div>
-      <div className='text-center my-20 text-white'>
+      <div className='text-center my- text-white'>
         <p className='text-lg font-Roboto'>Our Products at a Glance</p>
         <p className='text-3xl font-bold mt-5'>Currently most popular <br />
           The Steamulation Highlights</p>
@@ -56,7 +56,7 @@ const LandingPage: React.FC<Props> = () => {
                 Elevating Craftsmanship to an Art Form
               </p>
               <p className='font-Roboto text-xl font-light my-8 text-[#666666]'>
-                Our brand elevates traditional tools into premium, high-performance instruments, blending form and function with unrivaled craftsmanship. We take pride in creating exceptional designs using the finest materials, whether it's our swords, knives, or precision instruments.</p>
+                We craft high-performance instruments by blending form, function, and expert craftsmanship, using only the finest materials for our swords, knives, and precision tools.</p>
               <p className='mb-10 font-Roboto text-2xl font-bold text-[#666666]'>
                 Hand Crafted in PAKISTAN.
               </p>
