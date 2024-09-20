@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
   return (
     <footer className='w-full h-20 bg-cover py-16 mt-20' style={{ boxShadow: '0 -8px 6px -6px white' }}>
       <div className='flex justify-evenly items-start'>
-        <img src="/public/logo.svg" alt="sheesh" className='w-48 h-auto' />
+        <img src="/logo.svg" alt="sheesh" className='w-48 h-auto' />
         <ul className='text-[#f9df7b]'>
           <li>Schmidt Innovations GmbH</li>
           <li>Im Aller 3</li>

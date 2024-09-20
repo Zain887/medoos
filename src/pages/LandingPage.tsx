@@ -8,16 +8,16 @@ interface Props {
 
 const LandingPage: React.FC<Props> = () => {
   const images = [
-    { url: '/public/ImgPlaceholder.webp', article: 'ANGELO' },
-    { url: '/public/ImgPlaceholder.webp', article: 'ZOLLATO' },
-    { url: '/public/ImgPlaceholder.webp', article: 'MEDUSA' },
+    { url: '/ImgPlaceholder.webp', article: 'ANGELO' },
+    { url: '/ImgPlaceholder.webp', article: 'ZOLLATO' },
+    { url: '/ImgPlaceholder.webp', article: 'MEDUSA' },
   ];
 
   const additionalImages = [
-    '/public/ImgPlaceholder.webp',
-    '/public/ImgPlaceholder.webp',
-    '/public/ImgPlaceholder.webp',
-    '/public/ImgPlaceholder.webp',
+    '/ImgPlaceholder.webp',
+    '/ImgPlaceholder.webp',
+    '/ImgPlaceholder.webp',
+    '/ImgPlaceholder.webp',
   ];
 
   return (
