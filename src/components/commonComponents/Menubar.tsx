@@ -4,6 +4,7 @@ import { BiLogoTiktok } from "react-icons/bi";
 import { FaFacebook } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
+import { FaHome } from "react-icons/fa";
 import { Category } from '../../type'; // Import the Category interface
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const Menubar: React.FC<Props> = ({ categories }) => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(0);
+    const [activeIndex, setActiveIndex] = useState<number | null>(-1);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control the dropdown
 
     // Split categories: First 6 for direct menu items, rest for the dropdown
@@ -23,13 +24,23 @@ const Menubar: React.FC<Props> = ({ categories }) => {
             <NavLink to="/" className="w-52 h-auto">
                 <img src="/logo.svg" alt="predatorCut" width={'80%'} height={'80%'} />
             </NavLink>
-            <div className="w-full flex justify-center gap-24">
+            <div className="w-full flex justify-center items-center gap-24">
+                <NavLink
+                    to="/" // Home button linking to the home page
+                    className={`text-[#666666] font-Roboto text-md cursor-pointer border rounded p-2 border-white`}
+                    onClick={() => {
+                        setActiveIndex(null); // Set active index to null for home
+                        setIsDropdownOpen(false); // Close dropdown on select
+                    }}
+                >
+                    <FaHome size={20} color='gray' />
+                </NavLink>
                 {visibleCategories.map((category, index) => (
                     <NavLink
                         key={index}
                         to={`/${category.name}`} // Link to category page
                         className={`text-[#666666] font-Roboto text-md cursor-pointer ${index === activeIndex
-                            ? 'px-2 py-1 font-bold rounded-md bg-white'
+                            ? 'px-2 py-0 font-bold rounded-md bg-white'
                             : 'border-b-2 px-2 py-1 border-transparent hover:border-white hover:font-bold transition-border duration-300'
                             }`}
                         onClick={() => {
@@ -46,7 +57,7 @@ const Menubar: React.FC<Props> = ({ categories }) => {
                 {dropdownCategories.length > 0 && (
                     <div className="relative">
                         <button
-                            className="text-[#666666] font-Roboto text-md cursor-pointer border-b-2 px-2 py-1 border-transparent hover:bg-white hover:font-bold transition-border duration-300"
+                            className="text-[#666666] font-Roboto text-md cursor-pointer border-b-2 px-2 py-0 border-transparent hover:bg-white hover:font-bold transition-border duration-300"
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                         >
                             More Categories
@@ -90,7 +101,7 @@ const Menubar: React.FC<Props> = ({ categories }) => {
                 to="/order-now"
                 className="text-[#666666] w-36 font-bold text-center bg-white py-1 rounded-md shadow-sm shadow-[white] animation-loop"
             >
-                Order Now
+                View Cart
             </NavLink>
         </nav>
     );

@@ -1,21 +1,12 @@
 import React from 'react';
 import Slider from '../components/Slider';
 import Tracer from '../components/Tracer';
-
+import { getHeaderImages } from '../data';
 interface Props {
   // Define your component props here
 }
 
 const LandingPage: React.FC<Props> = () => {
-  const images = [
-    { url: '/headerImages/swordO.webp', article: 'Swords' },
-    { url: '/headerImages/axe.jpg', article: 'Axe' },
-    { url: '/headerImages/Hknife.jpg', article: 'Hunting knives' },
-    { url: '/headerImages/Kknives.jpg', article: 'Kitchen knives' },
-    { url: '/headerImages/dental.jpg', article: 'Dental Instrument' },
-    { url: '/headerImages/beautiInstrument.webp', article: 'Beauty Instrument' },
-  ];
-
   const flipImage = [
     '/flipImage/sword.webp',
     '/flipImage/axe.jpg',
@@ -25,7 +16,7 @@ const LandingPage: React.FC<Props> = () => {
 
   return (
     <>
-      <Slider images={images} />
+      <Slider hImages={getHeaderImages()}/>
       <p className='text-center text-[#918787] font-Roboto font-extrabold text-5xl my-20'>
         It's BOLD | It's SLEEK | It's UNSTOPPABLE
       </p>
