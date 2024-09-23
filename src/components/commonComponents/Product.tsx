@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductComment } from '../../types';
+// import { ProductComment } from '../../types';
 import { FaCartArrowDown } from "react-icons/fa6";
 
 interface Props {
@@ -10,10 +10,10 @@ interface Props {
   imageUrl: string;
   quantity: number;
   tag?: string[];
-  comments?: ProductComment[];
+  // comments?: ProductComment[];
 }
 
-const Product: React.FC<Props> = ({ name, description = "No description available", price, imageUrl, quantity, tag = [], comments = [] }) => {
+const Product: React.FC<Props> = ({ name, description = "No description available", price, imageUrl, quantity, tag = [] }) => {
   return (
     <div className="p-4 border rounded-lg shadow-md">
       {/* Product Image */}

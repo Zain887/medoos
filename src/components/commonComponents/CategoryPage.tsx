@@ -67,7 +67,7 @@ const CategoryPage: React.FC<Props> = ({ selectedCategory, headerImages }) => {
                                         description={product.description}
                                         tag={product.tag}
                                         quantity={product.quantity}
-                                        comments={product.comments}
+                                        // comments={product.comments}
                                     />
                                 ))
                             ) : (
@@ -99,7 +99,7 @@ const CategoryPage: React.FC<Props> = ({ selectedCategory, headerImages }) => {
                                     description={product.description}
                                     tag={product.tag}
                                     quantity={product.quantity}
-                                    comments={product.comments} // Include comments if needed
+                                    // comments={product.comments} // Include comments if needed
                                 />
                             ))
                         ) : (
