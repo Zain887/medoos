@@ -4,19 +4,16 @@ import './App.css';
 import Menubar from './components/commonComponents/Menubar';
 import LoadingAnimation from './components/loading/LoadingAnimation';
 import Footer from './components/commonComponents/Footer';
-import { getCategories, getHeaderImages } from './data'; // Importing data functions
-import CategoryPage from './components/commonComponents/CategoryPage'; // Reusable component
+import { categories, headerImages } from './data';
+import CategoryPage from './components/commonComponents/CategoryPage';
 import LandingPage from './pages/LandingPage';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const categories = getCategories(); // Fetching categories
-  const headerImages = getHeaderImages(); // Fetching header images
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust the duration as needed
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -31,16 +28,16 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<LandingPage />} // Landing page defaults to the first category
+              element={<LandingPage />}
             />
             {categories.map((category) => (
               <Route
                 key={category.id}
-                path={`/${category.name}`} // Creating dynamic routes based on category names
+                path={`/${category.name}`}
                 element={<CategoryPage selectedCategory={category} headerImages={headerImages} />}
               />
             ))}
-            <Route path="*" element={<Navigate to="/" />} /> {/* Redirects any unknown path to the landing page */}
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           <Footer categories={categories} />
         </div>

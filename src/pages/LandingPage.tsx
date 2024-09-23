@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from '../components/Slider';
 import Tracer from '../components/Tracer';
-import { getHeaderImages } from '../data';
+import { headerImages } from '../data';
 interface Props {
   // Define your component props here
 }
@@ -16,7 +16,7 @@ const LandingPage: React.FC<Props> = () => {
 
   return (
     <>
-      <Slider hImages={getHeaderImages()}/>
+      <Slider hImages={headerImages}/>
       <p className='text-center text-[#918787] font-Roboto font-extrabold text-5xl my-20'>
         It's BOLD | It's SLEEK | It's UNSTOPPABLE
       </p>

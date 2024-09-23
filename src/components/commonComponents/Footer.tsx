@@ -1,5 +1,5 @@
 import React from 'react';
-import { Category } from '../../type'; // Import the Category interface
+import { Category } from '../../types'; // Import the Category interface
 
 interface Props {
   categories: Category[]; // Pass the categories as props

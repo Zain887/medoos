@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
-import { Category } from '../../type'; // Import the Category interface
+import { Category } from '../../types'; // Import the Category interface
 
 interface Props {
     categories: Category[]; // Pass the categories as props
