@@ -100,6 +100,258 @@ export const categories: Category[] = [
                         comments: []
                     }
                 ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Combat Swords',
+                description: 'Sharp and durable combat swords',
+                products: [
+                    {
+                        id: uuidv4(),
+                        name: 'Viking Sword',
+                        description: 'A sharp and sturdy Viking-style sword.',
+                        price: 250,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 5,
+                        tag: ['Hot Selling', 'Discount'],
+                        comments: [
+                            {
+                                id: uuidv4(),
+                                userName: 'Emily Johnson',
+                                commentText: 'Amazing quality sword! Very sharp and durable.',
+                                rating: 5,
+                                date: new Date(2024, 1, 22),
+                            },
+                            {
+                                id: uuidv4(),
+                                userName: 'John Doe',
+                                commentText: 'Great for battles!',
+                                rating: 4,
+                                date: new Date(2024, 2, 10),
+                            }
+                        ]
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Longsword',
+                        description: 'A classic longsword for enthusiasts.',
+                        price: 300,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 3,
+                        tag: ['Featured'],
+                        comments: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Combat Swords2',
+                description: 'Sharp and durable combat swords',
+                products: [
+                    {
+                        id: uuidv4(),
+                        name: 'Viking Sword2',
+                        description: 'A sharp and sturdy Viking-style sword.',
+                        price: 250,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 5,
+                        tag: ['Hot Selling', 'Discount'],
+                        comments: [
+                            {
+                                id: uuidv4(),
+                                userName: 'Emily Johnson',
+                                commentText: 'Amazing quality sword! Very sharp and durable.',
+                                rating: 5,
+                                date: new Date(2024, 1, 22),
+                            },
+                            {
+                                id: uuidv4(),
+                                userName: 'John Doe',
+                                commentText: 'Great for battles!',
+                                rating: 4,
+                                date: new Date(2024, 2, 10),
+                            }
+                        ]
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Longsword2',
+                        description: 'A classic longsword for enthusiasts.',
+                        price: 300,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 3,
+                        tag: ['Featured'],
+                        comments: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Combat Swords',
+                description: 'Sharp and durable combat swords',
+                products: [
+                    {
+                        id: uuidv4(),
+                        name: 'Viking Sword',
+                        description: 'A sharp and sturdy Viking-style sword.',
+                        price: 250,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 5,
+                        tag: ['Hot Selling', 'Discount'],
+                        comments: [
+                            {
+                                id: uuidv4(),
+                                userName: 'Emily Johnson',
+                                commentText: 'Amazing quality sword! Very sharp and durable.',
+                                rating: 5,
+                                date: new Date(2024, 1, 22),
+                            },
+                            {
+                                id: uuidv4(),
+                                userName: 'John Doe',
+                                commentText: 'Great for battles!',
+                                rating: 4,
+                                date: new Date(2024, 2, 10),
+                            }
+                        ]
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Longsword',
+                        description: 'A classic longsword for enthusiasts.',
+                        price: 300,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 3,
+                        tag: ['Featured'],
+                        comments: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Combat Swords2',
+                description: 'Sharp and durable combat swords',
+                products: [
+                    {
+                        id: uuidv4(),
+                        name: 'Viking Sword2',
+                        description: 'A sharp and sturdy Viking-style sword.',
+                        price: 250,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 5,
+                        tag: ['Hot Selling', 'Discount'],
+                        comments: [
+                            {
+                                id: uuidv4(),
+                                userName: 'Emily Johnson',
+                                commentText: 'Amazing quality sword! Very sharp and durable.',
+                                rating: 5,
+                                date: new Date(2024, 1, 22),
+                            },
+                            {
+                                id: uuidv4(),
+                                userName: 'John Doe',
+                                commentText: 'Great for battles!',
+                                rating: 4,
+                                date: new Date(2024, 2, 10),
+                            }
+                        ]
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Longsword2',
+                        description: 'A classic longsword for enthusiasts.',
+                        price: 300,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 3,
+                        tag: ['Featured'],
+                        comments: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Combat Swords',
+                description: 'Sharp and durable combat swords',
+                products: [
+                    {
+                        id: uuidv4(),
+                        name: 'Viking Sword',
+                        description: 'A sharp and sturdy Viking-style sword.',
+                        price: 250,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 5,
+                        tag: ['Hot Selling', 'Discount'],
+                        comments: [
+                            {
+                                id: uuidv4(),
+                                userName: 'Emily Johnson',
+                                commentText: 'Amazing quality sword! Very sharp and durable.',
+                                rating: 5,
+                                date: new Date(2024, 1, 22),
+                            },
+                            {
+                                id: uuidv4(),
+                                userName: 'John Doe',
+                                commentText: 'Great for battles!',
+                                rating: 4,
+                                date: new Date(2024, 2, 10),
+                            }
+                        ]
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Longsword',
+                        description: 'A classic longsword for enthusiasts.',
+                        price: 300,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 3,
+                        tag: ['Featured'],
+                        comments: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Combat Swords2',
+                description: 'Sharp and durable combat swords',
+                products: [
+                    {
+                        id: uuidv4(),
+                        name: 'Viking Sword2',
+                        description: 'A sharp and sturdy Viking-style sword.',
+                        price: 250,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 5,
+                        tag: ['Hot Selling', 'Discount'],
+                        comments: [
+                            {
+                                id: uuidv4(),
+                                userName: 'Emily Johnson',
+                                commentText: 'Amazing quality sword! Very sharp and durable.',
+                                rating: 5,
+                                date: new Date(2024, 1, 22),
+                            },
+                            {
+                                id: uuidv4(),
+                                userName: 'John Doe',
+                                commentText: 'Great for battles!',
+                                rating: 4,
+                                date: new Date(2024, 2, 10),
+                            }
+                        ]
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Longsword2',
+                        description: 'A classic longsword for enthusiasts.',
+                        price: 300,
+                        imageUrl: 'https://via.placeholder.com/150',
+                        quantity: 3,
+                        tag: ['Featured'],
+                        comments: []
+                    }
+                ]
             }
         ]
     },

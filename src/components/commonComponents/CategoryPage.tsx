@@ -29,10 +29,11 @@ const CategoryPage: React.FC<Props> = ({ selectedCategory, headerImages }) => {
 
     // Get all products from selected category if no subcategory is selected
     const allProducts = selectedCategory.subcategories.flatMap(subcat => subcat.products);
-    const filteredProducts = selectedSubcategoryId 
+    const filteredProducts = selectedSubcategoryId
         ? selectedCategory.subcategories
-            .find(subcat => subcat.id === selectedSubcategoryId)?.products || [] 
+            .find(subcat => subcat.id === selectedSubcategoryId)?.products || []
         : allProducts; // Show all products if no subcategory is selected
+    const hotSellingProducts = filteredProducts.filter(product => product.tag && product.tag.includes('Featured'));
 
     return (
         <div>
@@ -50,7 +51,32 @@ const CategoryPage: React.FC<Props> = ({ selectedCategory, headerImages }) => {
             ) : (
                 <div>No header image found for {selectedCategory.name}</div>
             )}
-
+            <div className='m-5 p-5 box-border rounded-lg shadow-md shadow-yellow-50 border border-white'>
+                {hotSellingProducts.length > 0 && (
+                    <>
+                        <h2 className="text-2xl font-bold mb-4 text-center capitalize bg-white text-[#242424] rounded-md">Hot sales Items</h2>
+                        <div className="grid grid-cols-5 gap-4 h-[450px] overflow-y-auto">
+                            {hotSellingProducts.length > 0 ? (
+                                hotSellingProducts.map(product => (
+                                    <Product
+                                        key={product.id}
+                                        id={product.id}
+                                        imageUrl={product.imageUrl}
+                                        name={product.name}
+                                        price={product.price}
+                                        description={product.description}
+                                        tag={product.tag}
+                                        quantity={product.quantity}
+                                        comments={product.comments}
+                                    />
+                                ))
+                            ) : (
+                                <p>No Hot Selling products available.</p>
+                            )}
+                        </div>
+                    </>
+                )}
+            </div>
             <div className='p-5 flex'>
                 <div className='w-[20%]'>
                     <SubCategoryList
@@ -59,19 +85,20 @@ const CategoryPage: React.FC<Props> = ({ selectedCategory, headerImages }) => {
                         onSelectProductType={handleSelectSubcategory}
                     />
                 </div>
-                <div className='w-[80%]'>
-                    <h2 className="text-2xl font-bold mb-4">Products</h2>
-                    <div className="grid grid-cols-3 gap-4">
+                <div className='w-[80%] p-5'>
+                    <h2 className="text-2xl font-bold mb-4 text-center bg-white text-[#242424] border rounded-md">Products</h2>
+                    <div className="grid grid-cols-4 gap-4">
                         {filteredProducts.length > 0 ? (
                             filteredProducts.map(product => (
-                                <Product 
+                                <Product
                                     key={product.id} // Add a key prop
-                                    id={product.id} 
-                                    imageUrl={product.imageUrl} 
-                                    name={product.name} 
-                                    price={product.price} 
-                                    description={product.description} 
-                                    quantity={product.quantity} 
+                                    id={product.id}
+                                    imageUrl={product.imageUrl}
+                                    name={product.name}
+                                    price={product.price}
+                                    description={product.description}
+                                    tag={product.tag}
+                                    quantity={product.quantity}
                                     comments={product.comments} // Include comments if needed
                                 />
                             ))

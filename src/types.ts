@@ -36,3 +36,18 @@ export interface ProductComment {
   rating?: number;
   date: Date;
 }
+
+export interface CartItem {
+  productId: string;
+  name: string;
+  price: number;
+  quantity: number;
+  imageUrl: string;
+  total: number; // quantity * price
+}
+
+export interface Cart {
+  items: CartItem[];
+  totalQuantity: number;
+  totalPrice: number;
+}

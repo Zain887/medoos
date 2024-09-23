@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductComment } from '../../types';
+import { FaCartArrowDown } from "react-icons/fa6";
 
 interface Props {
   id: string;
@@ -40,7 +41,7 @@ const Product: React.FC<Props> = ({ name, description = "No description availabl
       </div>
 
       {/* Comments Section */}
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <h3 className="text-lg font-bold mb-2">Comments</h3>
         {comments.length > 0 ? (
           <ul className="space-y-2">
@@ -56,6 +57,9 @@ const Product: React.FC<Props> = ({ name, description = "No description availabl
         ) : (
           <p className="text-gray-600">No comments available.</p>
         )}
+      </div> */}
+      <div className='mt-4'>
+        <button className='w-full bg-gray-400 text-[#242424] font-bold items-center justify-around flex'>Add To Cart <FaCartArrowDown size={25} color='#242424' /> </button>
       </div>
     </div>
   );

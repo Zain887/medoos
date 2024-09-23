@@ -16,7 +16,7 @@ const SubCategoryList: React.FC<Props> = ({ categories, selectedCategoryId, onSe
 
     return (
         <div className='p-5'>
-            <h2 className="text-2xl font-bold mb-4">Subcategories</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center bg-white text-[#242424] border rounded-md">Subcategories</h2>
             {filteredSubcategories.length > 0 ? (
                 <ul className="space-y-4 rounded-md border border-white max-h-[600px] overflow-auto">
                     {filteredSubcategories.map((subcategory) => (

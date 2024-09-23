@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { HeaderImages } from '../types';
 
 interface Props {
-    // images: { url: string; article: string }[];
     hImages:HeaderImages[];
 }
 
