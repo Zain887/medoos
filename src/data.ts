@@ -27,7 +27,7 @@ export const categories: Category[] = [
                         name: 'Viking Sword',
                         description: 'A sharp and sturdy Viking-style sword.',
                         price: 250,
-                        imageUrl: 'https://via.placeholder.com/150',
+                        imageUrl: '/axe.webp',
                         quantity: 5,
                         tag: ['Hot Selling', 'Discount'],
                         comments: [

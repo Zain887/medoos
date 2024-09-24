@@ -1,5 +1,4 @@
 import React from 'react';
-// import { ProductComment } from '../../types';
 import { FaCartArrowDown } from "react-icons/fa6";
 
 interface Props {
@@ -10,10 +9,10 @@ interface Props {
   imageUrl: string;
   quantity: number;
   tag?: string[];
-  // comments?: ProductComment[];
+  addToCart: () => void; // AddToCart function as prop
 }
 
-const Product: React.FC<Props> = ({ name, description = "No description available", price, imageUrl, quantity, tag = [] }) => {
+const Product: React.FC<Props> = ({ name, description = "No description available", price, imageUrl, quantity, tag = [], addToCart }) => {
   return (
     <div className="p-4 border rounded-lg shadow-md">
       {/* Product Image */}
@@ -40,26 +39,13 @@ const Product: React.FC<Props> = ({ name, description = "No description availabl
         ))}
       </div>
 
-      {/* Comments Section */}
-      {/* <div className="mt-4">
-        <h3 className="text-lg font-bold mb-2">Comments</h3>
-        {comments.length > 0 ? (
-          <ul className="space-y-2">
-            {comments.map((comment) => (
-              <li key={comment.id} className="border p-2 rounded">
-                <p className="font-semibold">{comment.userName}</p>
-                <p className="text-sm text-gray-600">{comment.commentText}</p>
-                <p className="text-sm text-yellow-500">Rating: {comment.rating}/5</p>
-                <p className="text-xs text-gray-400">{new Date(comment.date).toLocaleDateString()}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-600">No comments available.</p>
-        )}
-      </div> */}
+      {/* Add to Cart Button */}
       <div className='mt-4'>
-        <button className='w-full bg-gray-400 text-[#242424] font-bold items-center justify-around flex'>Add To Cart <FaCartArrowDown size={25} color='#242424' /> </button>
+        <button 
+          onClick={addToCart} 
+          className='w-full bg-gray-400 text-[#242424] font-bold items-center justify-around flex'>
+          Add To Cart <FaCartArrowDown size={25} color='#242424' />
+        </button>
       </div>
     </div>
   );

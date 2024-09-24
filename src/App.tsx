@@ -7,6 +7,7 @@ import Footer from './components/commonComponents/Footer';
 import { categories, headerImages } from './data';
 import CategoryPage from './components/commonComponents/CategoryPage';
 import LandingPage from './pages/LandingPage';
+import CartHolder from './components/CartHolder';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
               />
             ))}
             <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/cart" element={<CartHolder />} /> {/* Route for cart */}
           </Routes>
           <Footer categories={categories} />
         </div>

@@ -98,7 +98,7 @@ const Menubar: React.FC<Props> = ({ categories }) => {
                 </a>
             </div>
             <NavLink
-                to="/order-now"
+                to="/cart"
                 className="text-[#666666] w-36 font-bold text-center bg-white py-1 rounded-md shadow-sm shadow-[white] animation-loop"
             >
                 View Cart
