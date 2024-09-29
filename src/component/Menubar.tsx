@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface MenuItem {
     label: string;
-    href: string;
+    to: string;
     hasDropdown?: boolean;
     dropdownItems?: MenuItem[];
 }
@@ -22,29 +23,45 @@ const Menubar: React.FC<Props> = ({
     logoAltMobile,
     menuItems
 }) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeMenuItem, setActiveMenuItem] = useState<number | null>(null); // Track the active menu item for dropdowns
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
+    const toggleDropdown = (index: number) => {
+        if (activeMenuItem === index) {
+            setActiveMenuItem(null); // Close if the same item is clicked
+        } else {
+            setActiveMenuItem(index); // Open the clicked dropdown
+        }
     };
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number, hasDropdown: boolean) => {
+        if (hasDropdown) {
+            e.preventDefault(); // Prevent the default link behavior if it has a dropdown
+            toggleDropdown(index);
+        } else {
+            // Close dropdown if the clicked link doesn't have a dropdown
+            setActiveMenuItem(null);
+            setIsMobileMenuOpen(false); // Close mobile menu when any link is clicked
+        }
+    };
+
     return (
         <nav className="bg-white p-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo for Desktop */}
-                <a href="/" className="hidden md:block">
+                <Link to="/" className="hidden md:block">
                     <img src={logoSrcDesktop} alt={logoAltDesktop} className="h-[2vw]" />
-                </a>
+                </Link>
 
                 {/* Logo for Mobile */}
-                <a href="/" className="block md:hidden">
+                <Link to="/" className="block md:hidden">
                     <img src={logoSrcMobile} alt={logoAltMobile} className="h-[10vw]" />
-                </a>
+                </Link>
 
                 {/* Mobile Menu Button */}
                 <button
@@ -65,21 +82,16 @@ const Menubar: React.FC<Props> = ({
                 <ul className={`hidden md:flex space-x-6`}>
                     {menuItems.map((item, index) => (
                         <li key={index} className="relative hover:bg-[#666666] duration-500 rounded-md">
-                            <a
-                                href={item.href}
+                            <Link
+                                to={item.to}
                                 className="text-[1vw] py-1 px-4 rounded-md font-bold"
-                                onClick={(e) => {
-                                    if (item.hasDropdown) {
-                                        e.preventDefault();
-                                        toggleDropdown();
-                                    }
-                                }}
+                                onClick={(e) => handleLinkClick(e, index, item.hasDropdown || false)}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
 
                             {/* Megamenu Dropdown */}
-                            {item.hasDropdown && isDropdownOpen && (
+                            {item.hasDropdown && activeMenuItem === index && (
                                 <div className="fixed left-0 w-full bg-white mt-2 shadow-lg shadow-stone-500">
                                     <ul className="p-2">
                                         {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
@@ -87,12 +99,16 @@ const Menubar: React.FC<Props> = ({
                                                 key={dropdownIndex}
                                                 className="py-1 px-4 hover:bg-[#666666] hover:translate-x-10 duration-300"
                                             >
-                                                <a
-                                                    href={dropdownItem.href}
+                                                <Link
+                                                    to={dropdownItem.to}
                                                     className="w-full block text-gray-700 text-[1vw]"
+                                                    onClick={() => {
+                                                        setActiveMenuItem(null); // Close the dropdown when a link is clicked
+                                                        setIsMobileMenuOpen(false); // Close mobile menu
+                                                    }}
                                                 >
                                                     {dropdownItem.label}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -107,21 +123,16 @@ const Menubar: React.FC<Props> = ({
                     <ul className="flex flex-col md:hidden absolute top-16 left-0 w-full bg-white shadow-md z-20">
                         {menuItems.map((item, index) => (
                             <li key={index} className="relative hover:bg-[#666666] duration-500 rounded-md">
-                                <a
-                                    href={item.href}
+                                <Link
+                                    to={item.to}
                                     className="text-[4vw] py-3 px-4 font-bold block hover:translate-x-10 duration-500"
-                                    onClick={(e) => {
-                                        if (item.hasDropdown) {
-                                            e.preventDefault();
-                                            toggleDropdown();
-                                        }
-                                    }}
+                                    onClick={(e) => handleLinkClick(e, index, item.hasDropdown || false)}
                                 >
                                     {item.label}
-                                </a>
+                                </Link>
 
                                 {/* Megamenu Dropdown (Mobile) */}
-                                {item.hasDropdown && isDropdownOpen && (
+                                {item.hasDropdown && activeMenuItem === index && (
                                     <div className="w-full bg-white mt-2 shadow-lg shadow-stone-500">
                                         <ul className="p-2">
                                             {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
@@ -129,12 +140,16 @@ const Menubar: React.FC<Props> = ({
                                                     key={dropdownIndex}
                                                     className="py-2 px-4 hover:bg-[#666666] duration-300"
                                                 >
-                                                    <a
-                                                        href={dropdownItem.href}
+                                                    <Link
+                                                        to={dropdownItem.to}
                                                         className="block text-gray-700 text-[4vw]"
+                                                        onClick={() => {
+                                                            setActiveMenuItem(null); // Close the dropdown when a link is clicked
+                                                            setIsMobileMenuOpen(false); // Close mobile menu
+                                                        }}
                                                     >
                                                         {dropdownItem.label}
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             ))}
                                         </ul>

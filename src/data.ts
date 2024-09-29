@@ -1,15 +1,15 @@
 export const menuItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-    { 
-        label: 'Products', 
-        href: '#', 
-        hasDropdown: true, 
+    { label: 'Home', to: '/' },
+    { label: 'About', to: '/about' },
+    { label: 'Contact', to: '/contact' },
+    {
+        label: 'Products',
+        to: '#',
+        hasDropdown: true,
         dropdownItems: [
-          { label: 'Blog', href: '/blog' },
-          { label: 'Contact', href: '/contact' },
-          { label: 'Support', href: '/support' }
+            { label: 'Dining Table', to: '/product?title=Dinig Table' },
+            { label: 'Coffee Table', to: '/product?title=Coffee Table' },
+            { label: 'Center Table', to: '/product?title=Center Table' }
         ]
-      }
-  ];
+    }
+];
