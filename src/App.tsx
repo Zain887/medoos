@@ -1,11 +1,10 @@
-import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import Menubar from './component/Menubar';
+import { menuItems } from './data';
 
 function App() {
   return (
-    <Router>
-     <h1>MEDOOS</h1>
-    </Router>
+  <Menubar logoAlt='Medoos' logoSrc='/medoosLogo.svg' menuItems={menuItems}/>
   );
 }
 
