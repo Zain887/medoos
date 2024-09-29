@@ -6,8 +6,8 @@ interface Props {
 
 const Home: React.FC<Props> = () => {
     return (
-        <div>
-            <h1 className='text-9xl text-red-600'>Home</h1>
+        <div className='w-full h-[40vw] object-cover overflow-hidden'>
+            <img src="/images/banner.png" alt="Medoos banner" width='auto' height='auto'/>
         </div>
     );
 };
