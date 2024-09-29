@@ -4,7 +4,7 @@ import { menuItems } from './data';
 
 function App() {
   return (
-  <Menubar logoAlt='Medoos' logoSrc='/medoosLogo.svg' menuItems={menuItems}/>
+    <Menubar menuItems={menuItems} logoAltDesktop='Medoos' logoAltMobile='Medoos' logoSrcDesktop='/medoosLogo.svg' logoSrcMobile='/medoosLogo.svg' />
   );
 }
 
