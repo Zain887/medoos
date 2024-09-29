@@ -55,7 +55,7 @@ const Menubar: React.FC<Props> = ({
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo for Desktop */}
                 <Link to="/" className="hidden md:block">
-                    <img src={logoSrcDesktop} alt={logoAltDesktop} className="h-[2vw]" />
+                    <img src={logoSrcDesktop} alt={logoAltDesktop} className="h-[4vw]" />
                 </Link>
 
                 {/* Logo for Mobile */}
