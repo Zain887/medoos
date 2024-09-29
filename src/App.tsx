@@ -23,8 +23,8 @@ function App() {
         menuItems={menuItems}
         logoAltDesktop='Medoos'
         logoAltMobile='Medoos'
-        logoSrcDesktop='/medoosLogo.svg'
-        logoSrcMobile='/medoosLogo.svg'
+        logoSrcDesktop='/mLogo.svg'
+        logoSrcMobile='/mLogo.svg'
       />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,7 +33,7 @@ function App() {
         <Route path="/product" element={<ProductWrapper />} />
       </Routes>
       <Footer
-        logoSrc="medoosLogo.svg"
+        logoSrc="mLogo.svg"
         logoAlt="Company Logo"
         navItems={menuItems}
         socialLinks={socialLinks}
