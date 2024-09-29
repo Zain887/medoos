@@ -29,12 +29,12 @@ const Menubar: React.FC<Props> = ({ logoSrc, logoAlt, menuItems }) => {
                 </a>
 
                 {/* Menu Items */}
-                <ul className="flex space-x-6 text-gray-800">
+                <ul className="flex space-x-6">
                     {menuItems.map((item, index) => (
-                        <li key={index} className="relative">
+                        <li key={index} className="relative hover:bg-[#666666] duration-500 rounded-md">
                             <a
                                 href={item.href}
-                                className="hover:text-gray-600"
+                                className="text-[1vw] py-1 px-4 rounded-md font-bold"
                                 onClick={(e) => {
                                     if (item.hasDropdown) {
                                         e.preventDefault();
@@ -51,8 +51,8 @@ const Menubar: React.FC<Props> = ({ logoSrc, logoAlt, menuItems }) => {
                                 <div className="fixed left-0 w-full bg-white mt-2 shadow-lg shadow-stone-500">
                                     <ul className="p-2">
                                         {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
-                                            <li key={dropdownIndex} className="py-2 px-4 hover:bg-gray-100">
-                                                <a href={dropdownItem.href} className="block text-gray-700">
+                                            <li key={dropdownIndex} className="py-1 px-4 hover:bg-[#666666] hover:translate-x-10 duration-300">
+                                                <a href={dropdownItem.href} className="w-full block text-gray-700 text-[1vw]">
                                                     {dropdownItem.label}
                                                 </a>
                                             </li>
