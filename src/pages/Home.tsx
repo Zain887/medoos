@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Slider from '../component/Slider';
 
 interface Props { }
 
@@ -59,11 +60,11 @@ const Home: React.FC<Props> = () => {
                     We believe that every space deserves a personal touch, and our resin artwork is designed to elevate and personalize your living and working spaces.
                 </p>
             </div>
-            <div className="my-20 text-center md:w-3/4 mx-auto w-full px-5">
+            <div className="my-20 text-center md:w-3/4 mx-auto w-full px-5 bg-stone-50">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
                     {/* What We Offer Section */}
-                    <div className='bg-[#ffae08] p-8 rounded-lg shadow-lg hover:scale-105 transition duration-300 transform shadow-black'>
+                    <div className='bg-[#ffae08] p-8 rounded-lg shadow-lg hover:scale-105 transition duration-300 transform shadow-black flex flex-col justify-center'>
                         <h1 className="text-3xl font-bold mb-6 text-black">What We Offer</h1>
                         <ul className="text-left space-y-5">
                             <li className="text-lg">
@@ -97,7 +98,7 @@ const Home: React.FC<Props> = () => {
                     </div>
 
                     {/* Why Choose Us Section */}
-                    <div className='bg-[#ffae08] p-8 rounded-lg shadow-lg hover:scale-105 transition duration-300 transform shadow-black'>
+                    <div className='bg-[#ffae08] p-8 rounded-lg shadow-lg hover:scale-105 transition duration-300 transform shadow-black flex flex-col justify-center'>
                         <h1 className="text-3xl font-bold mb-6 text-black">Why Choose Us?</h1>
                         <ul className="text-left space-y-5">
                             <li className="text-lg">
@@ -111,6 +112,14 @@ const Home: React.FC<Props> = () => {
                             </li>
                         </ul>
                     </div>
+                </div>
+            </div>
+            <div className="my-20">
+                <h1 className='text-black font-bold text-center text-xl'>
+                    Some of Our Exectuive Products
+                </h1>
+                <div className='md:w-3/4 w-full px-5 overflow-x-auto m-auto my-20'>
+                    <Slider/>
                 </div>
             </div>
 
