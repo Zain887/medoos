@@ -65,10 +65,10 @@ const Menubar: React.FC<Props> = ({
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="block md:hidden text-gray-700 focus:outline-none"
+                    className="block md:hidden bg-[#FFAE08] focus:outline-none"
                     onClick={toggleMobileMenu}
                 >
-                    <svg className="h-6 w-6 stroke-current text-white" viewBox="0 0 24 24">
+                    <svg className="h-6 w-6 stroke-current text-black" viewBox="0 0 24 24">
                         <path
                             fillRule="evenodd"
                             d="M4 5h16M4 12h16m-7 7h7"
@@ -81,7 +81,7 @@ const Menubar: React.FC<Props> = ({
                 {/* Menu Items (Desktop) */}
                 <ul className={`hidden md:flex space-x-6`}>
                     {menuItems.map((item, index) => (
-                        <li key={index} className="relative hover:bg-[#666666] duration-500 rounded-md">
+                        <li key={index} className="relative hover:bg-[#FFAE08] duration-500 rounded-md">
                             <Link
                                 to={item.to}
                                 className="text-[1vw] py-1 px-4 rounded-md font-bold"
@@ -97,11 +97,11 @@ const Menubar: React.FC<Props> = ({
                                         {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
                                             <li
                                                 key={dropdownIndex}
-                                                className="py-1 px-4 hover:bg-[#666666] hover:translate-x-10 duration-300"
+                                                className="py-1 px-4 hover:bg-[#FFAE08] hover:translate-x-10 duration-300"
                                             >
                                                 <Link
                                                     to={dropdownItem.to}
-                                                    className="w-full block text-gray-700 text-[1vw]"
+                                                    className="w-full block text-black text-[1vw]"
                                                     onClick={() => {
                                                         setActiveMenuItem(null); // Close the dropdown when a link is clicked
                                                         setIsMobileMenuOpen(false); // Close mobile menu
@@ -122,7 +122,7 @@ const Menubar: React.FC<Props> = ({
                 {isMobileMenuOpen && (
                     <ul className="flex flex-col md:hidden absolute top-16 left-0 w-full bg-white shadow-md z-20">
                         {menuItems.map((item, index) => (
-                            <li key={index} className="relative hover:bg-[#666666] duration-500 rounded-md">
+                            <li key={index} className="relative hover:bg-[#FFAE08] duration-500 rounded-md">
                                 <Link
                                     to={item.to}
                                     className="text-[4vw] py-3 px-4 font-bold block hover:translate-x-10 duration-500"
@@ -138,11 +138,11 @@ const Menubar: React.FC<Props> = ({
                                             {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
                                                 <li
                                                     key={dropdownIndex}
-                                                    className="py-2 px-4 hover:bg-[#666666] duration-300"
+                                                    className="py-2 px-4 hover:bg-[#FFAE08] duration-300"
                                                 >
                                                     <Link
                                                         to={dropdownItem.to}
-                                                        className="block text-gray-700 text-[4vw]"
+                                                        className="block text-black text-[4vw]"
                                                         onClick={() => {
                                                             setActiveMenuItem(null); // Close the dropdown when a link is clicked
                                                             setIsMobileMenuOpen(false); // Close mobile menu
